@@ -1,6 +1,6 @@
 from flask import Flask #importando biblioteca flask
 
-from tarefa import buscar_tarefas
+from tarefa import buscar_tarefas, buscar_tarefa
 
 app = Flask(__name__) #cria um objeto da classe flask
 
@@ -16,6 +16,12 @@ def index():
 def get_tarefas():
     tarefas = buscar_tarefas()
     return tarefas
+
+@app.route('/api/tarefa', methods=['GET'])
+
+def get_tarefa():
+    tarefa = buscar_tarefa()
+    return tarefa
 
 #se for o modulo principal roda o projeto em debug
 if __name__ == '__main__':
