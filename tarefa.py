@@ -18,3 +18,12 @@ def buscar_tarefas():
     ]
 
     return jsonify(tarefas)
+
+def buscar_tarefa():
+    tarefa = {
+        'id': 1,
+        'nome': 'Aprender digitação',
+        'descricao': 'Vamos Aumentar o zoom para não errar a digitação',
+        'status': 'Pendente'
+    }
+    return jsonify(tarefa)
